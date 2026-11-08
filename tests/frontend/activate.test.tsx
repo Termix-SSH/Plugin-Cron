@@ -83,6 +83,33 @@ describe(`${manifest.id} activate`, () => {
     expect(rendered.registered.tabs()).toEqual(["cron"]);
   });
 
+  it("registers its dashboard card and shows cron state per host", async () => {
+    rendered = await renderWithApp(plugin, {
+      manifest,
+      locales,
+      permissions: ["cron.use"],
+      hosts: [{ id: "1", name: "web", ip: "10.0.0.1", port: 22 }],
+      api: {
+        get: vi.fn(async () => ({
+          data: [
+            {
+              hostId: 1,
+              checkedAt: "2026-11-05T00:00:00.000Z",
+              installed: true,
+              running: false,
+              jobs: 3,
+              disabled: 1,
+            },
+          ],
+        })),
+      } as never,
+    });
+    expect(rendered.registered.dashboardCards()).toEqual(["cron-hosts"]);
+    rendered.renderDashboardCard("cron-hosts");
+    expect(await screen.findByText("web")).toBeTruthy();
+    expect(screen.getByText(locales.card.stopped)).toBeTruthy();
+  });
+
   it("lists jobs with their schedule in words", async () => {
     rendered = await renderWithApp(plugin, {
       manifest,

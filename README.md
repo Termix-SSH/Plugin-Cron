@@ -27,6 +27,7 @@ Read the [docs](https://docs.termix.site/plugins/cron) to set it up and use it.
 - See /etc/crontab, /etc/cron.d and the hourly to monthly scripts
 - Read the cron log
 - A Cron card in Host Metrics
+- Turn on, turn off, run and delete jobs through Termix actions
 
 <br />
 
