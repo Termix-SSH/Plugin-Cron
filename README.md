@@ -6,6 +6,12 @@
 
 <p>See, add and run cron jobs on your hosts, with a schedule preview and the system cron files</p>
 
+<!-- VIDEO:START -->
+
+<a href="https://www.youtube.com/watch?v=tYra9rt8_YA"><img src="https://img.shields.io/badge/Watch_the_demo-f59145?style=for-the-badge&logo=youtube&logoColor=white" alt="Watch the demo on YouTube" /></a>
+
+<!-- VIDEO:END -->
+
 </div>
 
 <br />
