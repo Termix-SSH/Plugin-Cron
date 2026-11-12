@@ -1,0 +1,121 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Termix-SSH/Termix/main/scripts/authz/authz.schema.json",
+  "seed": [],
+  "routes": {
+    "PUT /plugin-api/cron/:hostId/crontab": {
+      "access": "user",
+      "permission": "cron.use",
+      "resource": {
+        "kind": "host",
+        "min": "connect"
+      }
+    },
+    "GET /plugin-api/cron/:hostId/jobs": {
+      "access": "user",
+      "permission": "cron.use",
+      "resource": {
+        "kind": "host",
+        "min": "connect"
+      }
+    },
+    "POST /plugin-api/cron/:hostId/jobs": {
+      "access": "user",
+      "permission": "cron.use",
+      "resource": {
+        "kind": "host",
+        "min": "connect"
+      }
+    },
+    "DELETE /plugin-api/cron/:hostId/jobs/:id": {
+      "access": "user",
+      "permission": "cron.use",
+      "resource": {
+        "kind": "host",
+        "min": "connect"
+      },
+      "destructive": true,
+      "allowed": "any",
+      "note": "Names a id on the host, which the test host does not have; host access is still checked"
+    },
+    "PUT /plugin-api/cron/:hostId/jobs/:id": {
+      "access": "user",
+      "permission": "cron.use",
+      "resource": {
+        "kind": "host",
+        "min": "connect"
+      },
+      "allowed": "any",
+      "note": "Names a id on the host, which the test host does not have; host access is still checked"
+    },
+    "POST /plugin-api/cron/:hostId/jobs/:id/run": {
+      "access": "user",
+      "permission": "cron.use",
+      "resource": {
+        "kind": "host",
+        "min": "connect"
+      },
+      "destructive": true,
+      "allowed": "any",
+      "note": "Names a id on the host, which the test host does not have; host access is still checked"
+    },
+    "POST /plugin-api/cron/:hostId/jobs/:id/state": {
+      "access": "user",
+      "permission": "cron.use",
+      "resource": {
+        "kind": "host",
+        "min": "connect"
+      },
+      "allowed": "any",
+      "note": "Names a id on the host, which the test host does not have; host access is still checked"
+    },
+    "GET /plugin-api/cron/:hostId/logs": {
+      "access": "user",
+      "permission": "cron.use",
+      "resource": {
+        "kind": "host",
+        "min": "connect"
+      }
+    },
+    "GET /plugin-api/cron/:hostId/status": {
+      "access": "user",
+      "permission": "cron.use",
+      "resource": {
+        "kind": "host",
+        "min": "connect"
+      }
+    },
+    "GET /plugin-api/cron/:hostId/system": {
+      "access": "user",
+      "permission": "cron.use",
+      "resource": {
+        "kind": "host",
+        "min": "connect"
+      }
+    },
+    "DELETE /plugin-api/cron/:hostId/system/:name": {
+      "access": "user",
+      "permission": "cron.use",
+      "resource": {
+        "kind": "host",
+        "min": "connect"
+      },
+      "destructive": true,
+      "allowed": "any",
+      "note": "Names a name on the host, which the test host does not have; host access is still checked"
+    },
+    "PUT /plugin-api/cron/:hostId/system/:name": {
+      "access": "user",
+      "permission": "cron.use",
+      "resource": {
+        "kind": "host",
+        "min": "connect"
+      },
+      "allowed": "any",
+      "note": "Names a name on the host, which the test host does not have; host access is still checked"
+    },
+    "GET /plugin-api/cron/summary": {
+      "access": "user",
+      "permission": "cron.use"
+    }
+  }
+}
